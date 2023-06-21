@@ -37,6 +37,36 @@ function hamburgerClicked(){
   })
 };
 
-
 hamburgerClicked();
 navScroll();
+
+const toTopBtn = document.querySelector(".to-top-btn");
+
+function toTopButton(){
+  window.addEventListener("scroll", () => {
+    if(window.scrollY > 800) {
+      toTopBtn.classList.add("active");
+    } else {
+      toTopBtn.classList.remove("active");
+    }
+  });
+}
+
+toTopButton();
+
+function checkZoomLevel() {
+  let zoomLevel = Math.round((window.devicePixelRatio || 1) * 100);
+  const navbar = document.querySelector('.navbar');
+
+  if (zoomLevel >= 250) {
+    navbar.style.display = 'none';
+  } else if (zoomLevel <= 75){
+    navbar.style.display = 'none';
+  } else {
+    navbar.style.display = 'block';
+  }
+}
+
+// Check the zoom level on window load and resize
+window.addEventListener('load', checkZoomLevel);
+window.addEventListener('resize', checkZoomLevel);
