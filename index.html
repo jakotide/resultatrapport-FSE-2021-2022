@@ -13,7 +13,7 @@
 </head>
 <body>
   <!-- Navbar -->
-  <header>
+  <!-- <header>
     <nav class="navbar">
       <div class="nav-content">
         <a href="index.html" class="logo"><img src="/assets/FSE-Hvit.png"></a>
@@ -29,14 +29,68 @@
         </div>
       </div>
     </nav>
+  </header> -->
+  <header>
+    <nav>
+      <img class="logo" src="/assets/FSE-Hvit.png">
+      <ul>
+        <li>
+          <a>Om Oss</a>
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="#leder">Leder, Katinka Leiner</a></li>
+              <li><a>Om Ferd og FSE</a></li>
+              <li><a>Milepæler</a></li>
+              <li><a>Våre inversteringsområder</a></li>
+              <li><a>Vår inversteringsprosess</a></li>
+              <li><a>Om teamet</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a>Sosiale Resultater</a>
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="#bidrag">Vårt bidrag</a></li>
+              <li><a>Porteføljens samlede resultater</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a>Våre Selskaper</a>
+          <div class="dropdown-menu">
+            <ul>
+              <li><a>Unicus</a></li>
+              <li><a>auticon</a></li>
+              <li><a>Generasjon M</a></li>
+              <li><a>Lifetools</a></li>
+              <li><a>Gammel Nok</a></li>
+              <li><a>Ludenso</a></li>
+              <li><a>Mindmore</a></li>
+              <li><a>Den Sociale Kapitalfond</a></li>
+              <li><a>Autism Impact Fund</a></li>
+              <li><a>No Isolation</a></li>
+              <li><a>Forskerfabrikken</a></li>
+              <li><a>IMAL</a></li>
+              <li><a>Motitech</a></li>
+              <li><a>Atlas Komeptanse</a></li>
+              <li><a>Medarbeiderne</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
   </header>
   <main>
     <div class="page-container">
-      <img src="/pages/2021-2022-Resultatrapport2.jpg" alt="Ferd rapport">
+      <div class="img-container">
+        <img src="/pages/2021-2022-Resultatrapport2.jpg" alt="Ferd rapport">
+        <i class="fa-solid fa-plus fa-4xs pluss"></i>
+      </div>
       <img src="/pages/2021-2022-Resultatrapport3.jpg" alt="Ferd rapport">
       <img src="/pages/2021-2022-Resultatrapport4.jpg" alt="Ferd rapport">
       <img src="/pages/2021-2022-Resultatrapport5.jpg" alt="Ferd rapport">
-      <img src="/pages/2021-2022-Resultatrapport6.jpg" alt="Ferd rapport">
+      <img id="leder" src="/pages/2021-2022-Resultatrapport6.jpg" alt="Ferd rapport">
       <img src="/pages/2021-2022-Resultatrapport7.jpg" alt="Ferd rapport">
       <img src="/pages/2021-2022-Resultatrapport8.jpg" alt="Ferd rapport">
       <img src="/pages/2021-2022-Resultatrapport9.jpg" alt="Ferd rapport">
@@ -46,7 +100,7 @@
       <img src="/pages/2021-2022-Resultatrapport13.jpg" alt="Ferd rapport">
       <img src="/pages/2021-2022-Resultatrapport14.jpg" alt="Ferd rapport">
       <img src="/pages/2021-2022-Resultatrapport15.jpg" alt="Ferd rapport">
-      <img src="/pages/2021-2022-Resultatrapport16.jpg" alt="Ferd rapport">
+      <img id="bidrag" src="/pages/2021-2022-Resultatrapport16.jpg" alt="Ferd rapport">
       <img src="/pages/2021-2022-Resultatrapport17.jpg" alt="Ferd rapport">
       <img src="/pages/2021-2022-Resultatrapport18.jpg" alt="Ferd rapport">
       <img src="/pages/2021-2022-Resultatrapport19.jpg" alt="Ferd rapport">
@@ -91,6 +145,10 @@
       <img src="/pages/mobile/jakob-jpeg-digital - LITEN-NY-DENN-kopi6.jpg" alt="">
     </div>
   </main>
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img id="modal-image" class="modal-content" alt="Ferd rapport">
+  </div>
   <a href="#" class="to-top-btn" aria-label="to-top-button">
     <i class="fa-solid fa-arrow-up"></i>
   </a>

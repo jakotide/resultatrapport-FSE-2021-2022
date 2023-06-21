@@ -62,7 +62,6 @@ a {
 
 /* Index */
 
-
 body {
   background-color: #444343;
 }
@@ -86,18 +85,10 @@ main {
 }
 
 .page-container img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
-  height: 100%;
-}
-.page-container img:first-child {
-  object-fit: cover;
-  width: 100%;
-  height: 50%
-}
-
-.front-cover {
-  height: 1000px;
+  height: 95vh;
+  /* height: 100%; */
 }
 
 .page-container-small {
@@ -114,13 +105,112 @@ main {
   object-fit: contain;
 }
 
+/* Modal Image */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 110vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 120%;
+  padding: 0 0 5rem 0;
+}
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* Navbar */
 
-.navbar {
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--clr-dark-blue);
+  height: 5em;
+  padding: 0 5rem;
+  top: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  position: relative;
+  padding: 0 2rem;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+}
+
+.dropdown-menu ul {
+  background-color: var(--clr-dark-blue);
+  padding: 1.3rem 0 0 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+}
+
+.dropdown-menu ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-menu ul li:hover {
+  background-color: var(--clr-blue);
+}
+
+nav ul li:hover .dropdown-menu {
+  display: block;
+}
+
+
+.logo {
+  width: 140px;
+  height: 37px;
+  object-fit: cover;
+  padding-top: 2px;
+}
+
+
+/* .navbar {
   background-color: var(--clr-dark-blue);
   color: #FFF;
   height: 9vh;
-  /* height: 5em; */
   position: fixed;
   width: 100%;
   z-index: 999;
@@ -193,6 +283,19 @@ li {
   background-color: white;
 }
 
+.img-container img{
+  position: relative;
+}
+
+.pluss {
+  position: absolute;
+  color: white;
+  height: 30px;
+  width: 50px;
+  top: 12%;
+  right: 14%;
+} */
+
 /* To top button */
 
 .to-top-btn {
@@ -227,7 +330,6 @@ li {
     display: none;
   }
 } */
-
 
 /* @media (max-width: 86em) {
 
