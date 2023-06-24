@@ -40,6 +40,73 @@
 // hamburgerClicked();
 // navScroll();
 
+(() =>{
+ 
+  const openNavMenu = document.querySelector(".open-nav-menu"),
+  closeNavMenu = document.querySelector(".close-nav-menu"),
+  navMenu = document.querySelector(".nav-menu"),
+  menuOverlay = document.querySelector(".menu-overlay"),
+  mediaSize = 991;
+
+  openNavMenu.addEventListener("click", toggleNav);
+  closeNavMenu.addEventListener("click", toggleNav);
+  // close the navMenu by clicking outside
+  menuOverlay.addEventListener("click", toggleNav);
+
+  function toggleNav() {
+  	navMenu.classList.toggle("open");
+  	menuOverlay.classList.toggle("active");
+  	document.body.classList.toggle("hidden-scrolling");
+  }
+
+  navMenu.addEventListener("click", (event) =>{
+      if(event.target.hasAttribute("data-toggle") && 
+      	window.innerWidth <= mediaSize){
+      	// prevent default anchor click behavior
+      	event.preventDefault();
+      	const menuItemHasChildren = event.target.parentElement;
+        // if menuItemHasChildren is already expanded, collapse it
+        if(menuItemHasChildren.classList.contains("active")){
+        	collapseSubMenu();
+        }
+        else{
+          // collapse existing expanded menuItemHasChildren
+          if(navMenu.querySelector(".menu-item-has-children.active")){
+        	collapseSubMenu();
+          }
+          // expand new menuItemHasChildren
+          menuItemHasChildren.classList.add("active");
+          const subMenu = menuItemHasChildren.querySelector(".sub-menu");
+          subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+        }
+      }
+  });
+  function collapseSubMenu(){
+  	navMenu.querySelector(".menu-item-has-children.active .sub-menu")
+  	.removeAttribute("style");
+  	navMenu.querySelector(".menu-item-has-children.active")
+  	.classList.remove("active");
+  }
+  function resizeFix(){
+  	 // if navMenu is open ,close it
+  	 if(navMenu.classList.contains("open")){
+  	 	toggleNav();
+  	 }
+  	 // if menuItemHasChildren is expanded , collapse it
+  	 if(navMenu.querySelector(".menu-item-has-children.active")){
+        	collapseSubMenu();
+     }
+  }
+
+  window.addEventListener("resize", function(){
+     if(this.innerWidth > mediaSize){
+     	resizeFix();
+     }
+  });
+
+})();
+
+
 const toTopBtn = document.querySelector(".to-top-btn");
 
 function toTopButton(){
@@ -52,22 +119,6 @@ function toTopButton(){
 
 toTopButton();
 
-// function checkZoomLevel() {
-//   let zoomLevel = Math.round((window.devicePixelRatio || 1) * 100);
-//   const navbar = document.querySelector(".navbar");
-
-//   if (zoomLevel >= 250) {
-//     navbar.style.display = "none";
-//   } else if (zoomLevel <= 75){
-//     navbar.style.display = "none";
-//   } else {
-//     navbar.style.display = "block";
-//   }
-// }
-
-// // Check the zoom level on window load and resize
-// window.addEventListener('load', checkZoomLevel);
-// window.addEventListener('resize', checkZoomLevel);
 
 // Modal
 
@@ -81,10 +132,8 @@ images.forEach((image) => {
   image.addEventListener("click", () => {
     // Set the clicked image source as the modal image source
     modalImage.src = image.src;
-
     modal.style.display = "block";
     document.body.style.overflow = "hidden";
-    toTopBtn.style.display = "none";
   });
 });
 
@@ -93,7 +142,6 @@ const closeBtn = document.querySelector(".close");
 closeBtn.addEventListener("click", () => {
   document.body.style.overflow = "visible";
   modal.style.display = "none";
-  toTopBtn.style.dispaly = "block";
 });
 
 // Close the modal when clicking outside the modal content
@@ -101,21 +149,14 @@ window.addEventListener("click", (event) => {
   if (event.target === modal) {
     modal.style.display = "none";
     document.body.style.overflow = "visible";
-    toTopBtn.style.dispaly = "block";
   }
 });
 
+modal.addEventListener("click", () => {
+  modal.style.display = "none";
+  document.body.style.overflow = "visible";
+})
 
-const navItems = document.querySelectorAll('nav ul li');
 
-navItems.forEach((item) => {
-  item.addEventListener('mouseover', () => {
-    item.querySelector('.dropdown-menu').style.display = 'block';
-  });
-
-  item.addEventListener('mouseout', () => {
-    item.querySelector('.dropdown-menu').style.display = 'none';
-  });
-});
 
 
