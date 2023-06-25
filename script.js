@@ -74,18 +74,6 @@ function navbar() {
     navMenu.classList.toggle("open");
     menuOverlay.classList.toggle("active");
     document.body.classList.toggle("hidden-scrolling");
-
-    // Check if "Våre selskaper" is clicked
-    const selskaperLink = document.querySelector('a[href="#selskaper"]');
-    const omOssSubMenu = document.querySelector(".om-oss-menu");
-    
-    if (selskaperLink && omOssSubMenu) {
-      if (selskaperLink.parentElement.classList.contains("active")) {
-        omOssSubMenu.classList.remove("open");
-      } else {
-        omOssSubMenu.classList.add("open");
-      }
-    }
   }
 
   navMenu.addEventListener("click", (event) => {
@@ -114,6 +102,19 @@ function navbar() {
     navMenu.querySelector(".menu-item-has-children.active").classList.remove("active");
   }
 
+  function hideOmOssSubMenu() {
+    const selskaperLink = document.querySelector('a[href="#selskaper"]');
+    const omOssSubMenu = document.querySelector(".om-oss-menu");
+
+    if (selskaperLink && omOssSubMenu) {
+      if (selskaperLink.parentElement.classList.contains("active")) {
+        omOssSubMenu.classList.remove("open");
+      } else {
+        omOssSubMenu.classList.add("open");
+      }
+    }
+  }
+
   function resizeFix() {
     if (navMenu.classList.contains("open")) {
       toggleNav();
@@ -121,6 +122,7 @@ function navbar() {
     if (navMenu.querySelector(".menu-item-has-children.active")) {
       collapseSubMenu();
     }
+    hideOmOssSubMenu();
   }
 
   window.addEventListener("resize", function () {
@@ -131,6 +133,7 @@ function navbar() {
 }
 
 navbar();
+
 
 
 
