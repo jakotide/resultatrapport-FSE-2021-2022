@@ -125,7 +125,7 @@ function navbar() {
   });
 
   const omOssLink = document.querySelector('a[href="#om-oss"]');
-  const sosialeResultaterLink = document.querySelector('a[href="#sosiale-resultater"]');
+  const sosialeResultaterLink = document.querySelector('a[href="#resultater"]');
 
   omOssLink.addEventListener("click", () => {
     toggleSubMenuVisibility(".om-oss-menu");
