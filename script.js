@@ -95,9 +95,7 @@ function navbar() {
 
         // Hide items in "Om oss" submenu
         if (menuItemHasChildren.getAttribute("href") === "#selskaper") {
-          const omOssSubMenu = document.querySelector("#om-oss .sub-menu");
-          omOssSubMenu.style.maxHeight = null;
-          const omOssMenuItems = omOssSubMenu.querySelectorAll(".menu-item");
+          const omOssMenuItems = document.querySelectorAll("#om-oss .menu-item");
           omOssMenuItems.forEach((menuItem) => {
             menuItem.style.display = "none";
           });
