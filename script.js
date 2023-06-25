@@ -102,29 +102,21 @@ function navbar() {
     navMenu.querySelector(".menu-item-has-children.active").classList.remove("active");
   }
 
-  function hideOmOssSubMenu() {
+  function toggleOmOssSubMenu() {
     const selskaperLink = document.querySelector('a[href="#selskaper"]');
     const omOssSubMenu = document.querySelector(".om-oss-menu");
 
     if (selskaperLink && omOssSubMenu) {
-      if (selskaperLink.parentElement.classList.contains("active")) {
-        omOssSubMenu.classList.remove("hidden");
-      } else {
-        omOssSubMenu.classList.add("hidden");
-      }
+      omOssSubMenu.classList.toggle("hidden");
     }
   }
 
-  function hideSosialeResultaterSubMenu() {
+  function toggleSosialeResultaterSubMenu() {
     const sosialeResultaterLink = document.querySelector('a[href="#sosiale-resultater"]');
     const sosialeResultaterSubMenu = document.querySelector(".sosiale-resultater-menu");
 
     if (sosialeResultaterLink && sosialeResultaterSubMenu) {
-      if (sosialeResultaterLink.parentElement.classList.contains("active")) {
-        sosialeResultaterSubMenu.classList.remove("hidden");
-      } else {
-        sosialeResultaterSubMenu.classList.add("hidden");
-      }
+      sosialeResultaterSubMenu.classList.toggle("hidden");
     }
   }
 
@@ -135,8 +127,8 @@ function navbar() {
     if (navMenu.querySelector(".menu-item-has-children.active")) {
       collapseSubMenu();
     }
-    hideOmOssSubMenu();
-    hideSosialeResultaterSubMenu();
+    toggleOmOssSubMenu();
+    toggleSosialeResultaterSubMenu();
   }
 
   window.addEventListener("resize", function () {
@@ -145,11 +137,13 @@ function navbar() {
     }
   });
 
-  hideOmOssSubMenu(); // Call the function initially to hide "Om oss" submenu if needed
-  hideSosialeResultaterSubMenu(); // Call the function initially to hide "Sosiale resultater" submenu if needed
+  toggleOmOssSubMenu(); // Call the function initially to toggle "Om oss" submenu if needed
+  toggleSosialeResultaterSubMenu(); // Call the function initially to toggle "Sosiale resultater" submenu if needed
 }
 
 navbar();
+
+
 
 
 
