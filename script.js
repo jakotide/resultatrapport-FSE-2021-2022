@@ -95,14 +95,16 @@ function navbar() {
 
         // Hide items in "Om oss" submenu
         if (menuItemHasChildren.getAttribute("href") === "#selskaper") {
-          const omOssMenuItems = document.querySelectorAll(".menu-item-has-children.om-oss .menu-item");
-          omOssMenuItems.forEach((menuItem) => {
-            menuItem.classList.add("hidden");
+          const omOssMenu = document.querySelector('.menu-item-has-children[data-toggle="sub-menu"][href="#om-oss"]');
+          const omOssSubMenuItems = omOssMenu.nextElementSibling.querySelectorAll('.menu-item');
+          omOssSubMenuItems.forEach((menuItem) => {
+            menuItem.style.display = "none";
           });
         } else {
-          const omOssMenuItems = document.querySelectorAll(".menu-item-has-children.om-oss .menu-item");
-          omOssMenuItems.forEach((menuItem) => {
-            menuItem.classList.remove("hidden");
+          const omOssMenu = document.querySelector('.menu-item-has-children[data-toggle="sub-menu"][href="#om-oss"]');
+          const omOssSubMenuItems = omOssMenu.nextElementSibling.querySelectorAll('.menu-item');
+          omOssSubMenuItems.forEach((menuItem) => {
+            menuItem.style.display = "block";
           });
         }
       }
@@ -136,6 +138,7 @@ function navbar() {
 }
 
 navbar();
+
 
 
 
