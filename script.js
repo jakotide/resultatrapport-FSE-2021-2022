@@ -74,6 +74,18 @@ function navbar() {
     navMenu.classList.toggle("open");
     menuOverlay.classList.toggle("active");
     document.body.classList.toggle("hidden-scrolling");
+
+    // Check if "Våre selskaper" is clicked
+    const selskaperLink = document.querySelector('a[href="#selskaper"]');
+    const omOssSubMenu = document.querySelector(".om-oss-menu");
+    
+    if (selskaperLink && omOssSubMenu) {
+      if (selskaperLink.parentElement.classList.contains("active")) {
+        omOssSubMenu.classList.remove("open");
+      } else {
+        omOssSubMenu.classList.add("open");
+      }
+    }
   }
 
   navMenu.addEventListener("click", (event) => {
@@ -82,37 +94,33 @@ function navbar() {
       window.innerWidth <= mediaSize
     ) {
       event.preventDefault();
-      const menuItemHasChildren = event.target.closest(".menu-item-has-children");
-      const subMenu = menuItemHasChildren.querySelector(".sub-menu");
+      const menuItemHasChildren = event.target.parentElement;
 
       if (menuItemHasChildren.classList.contains("active")) {
-        menuItemHasChildren.classList.remove("active");
-        subMenu.style.maxHeight = null;
+        collapseSubMenu();
       } else {
-        closeOpenSubMenus();
+        if (navMenu.querySelector(".menu-item-has-children.active")) {
+          collapseSubMenu();
+        }
         menuItemHasChildren.classList.add("active");
+        const subMenu = menuItemHasChildren.querySelector(".sub-menu");
         subMenu.style.maxHeight = subMenu.scrollHeight + "px";
       }
     }
   });
 
-  function closeOpenSubMenus() {
-    const activeSubMenus = navMenu.querySelectorAll(".sub-menu");
-    activeSubMenus.forEach((subMenu) => {
-      subMenu.style.maxHeight = null;
-    });
-
-    const activeMenuItems = navMenu.querySelectorAll(".menu-item-has-children.active");
-    activeMenuItems.forEach((menuItem) => {
-      menuItem.classList.remove("active");
-    });
+  function collapseSubMenu() {
+    navMenu.querySelector(".menu-item-has-children.active .sub-menu").removeAttribute("style");
+    navMenu.querySelector(".menu-item-has-children.active").classList.remove("active");
   }
 
   function resizeFix() {
     if (navMenu.classList.contains("open")) {
       toggleNav();
     }
-    closeOpenSubMenus();
+    if (navMenu.querySelector(".menu-item-has-children.active")) {
+      collapseSubMenu();
+    }
   }
 
   window.addEventListener("resize", function () {
@@ -123,6 +131,9 @@ function navbar() {
 }
 
 navbar();
+
+
+
 
 
 
