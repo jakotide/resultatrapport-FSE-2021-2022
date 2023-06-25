@@ -318,9 +318,13 @@ a{
 	background-size: cover;
 }
 
-.header .menu-item.hidden {
-  display: none;
+.om-oss-menu {
+	z-index: -1;
 }
+
+/* .header .menu-item.hidden {
+  display: none;
+} */
 
 /* To top button */
 
