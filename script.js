@@ -108,9 +108,9 @@ function navbar() {
 
     if (selskaperLink && omOssSubMenu) {
       if (selskaperLink.parentElement.classList.contains("active")) {
-        omOssSubMenu.classList.remove("open");
+        omOssSubMenu.style.maxHeight = null;
       } else {
-        omOssSubMenu.classList.add("open");
+        omOssSubMenu.style.maxHeight = omOssSubMenu.scrollHeight + "px";
       }
     }
   }
@@ -130,6 +130,8 @@ function navbar() {
       resizeFix();
     }
   });
+
+  hideOmOssSubMenu(); // Call the function initially to hide "Om oss" submenu if needed
 }
 
 navbar();
@@ -140,24 +142,25 @@ navbar();
 
 
 
+
 // Link offset
 
 // Smooth scrolling behavior with an offset of 100 pixels
-// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//   anchor.addEventListener('click', function (e) {
-//     e.preventDefault();
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
 
-//     const target = document.querySelector(this.getAttribute('href'));
-//     const offset = 90;
+    const target = document.querySelector(this.getAttribute('href'));
+    const offset = 90;
 
-//     if (target) {
-//       window.scrollTo({
-//         top: target.offsetTop - offset,
-//         behavior: 'smooth'
-//       });
-//     }
-//   });
-// });
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - offset,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
 
 // To top button
 
