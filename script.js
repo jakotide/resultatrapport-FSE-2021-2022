@@ -82,7 +82,7 @@ function navbar() {
       window.innerWidth <= mediaSize
     ) {
       event.preventDefault();
-      const menuItemHasChildren = event.target.parentElement;
+      const menuItemHasChildren = event.target.closest(".menu-item-has-children");
       const subMenu = menuItemHasChildren.querySelector(".sub-menu");
 
       if (menuItemHasChildren.classList.contains("active")) {
@@ -92,25 +92,6 @@ function navbar() {
         closeOpenSubMenus();
         menuItemHasChildren.classList.add("active");
         subMenu.style.maxHeight = subMenu.scrollHeight + "px";
-
-        // Hide items in "Om oss" submenu
-        if (menuItemHasChildren.getAttribute("href") === "#selskaper") {
-          const omOssMenu = document.querySelector('.menu-item-has-children[data-toggle="sub-menu"][href="#om-oss"]');
-          if (omOssMenu.nextElementSibling) {
-            const omOssSubMenuItems = omOssMenu.nextElementSibling.querySelectorAll('.menu-item');
-            omOssSubMenuItems.forEach((menuItem) => {
-              menuItem.style.display = "none";
-            });
-          }
-        } else {
-          const omOssMenu = document.querySelector('.menu-item-has-children[data-toggle="sub-menu"][href="#om-oss"]');
-          if (omOssMenu.nextElementSibling) {
-            const omOssSubMenuItems = omOssMenu.nextElementSibling.querySelectorAll('.menu-item');
-            omOssSubMenuItems.forEach((menuItem) => {
-              menuItem.style.display = "block";
-            });
-          }
-        }
       }
     }
   });
@@ -142,6 +123,7 @@ function navbar() {
 }
 
 navbar();
+
 
 
 // Link offset
