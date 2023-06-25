@@ -108,9 +108,9 @@ function navbar() {
 
     if (selskaperLink && omOssSubMenu) {
       if (selskaperLink.parentElement.classList.contains("active")) {
-        omOssSubMenu.style.maxHeight = null;
+        omOssSubMenu.classList.remove("hidden");
       } else {
-        omOssSubMenu.style.maxHeight = "0";
+        omOssSubMenu.classList.add("hidden");
       }
     }
   }
@@ -135,6 +135,7 @@ function navbar() {
 }
 
 navbar();
+
 
 
 
