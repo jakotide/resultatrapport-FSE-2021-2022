@@ -92,6 +92,16 @@ function navbar() {
         closeOpenSubMenus();
         menuItemHasChildren.classList.add("active");
         subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+
+        // Hide items in "Om oss" submenu
+        if (menuItemHasChildren.getAttribute("href") === "#selskaper") {
+          const omOssSubMenu = document.querySelector("#om-oss .sub-menu");
+          omOssSubMenu.style.maxHeight = null;
+          const omOssMenuItems = omOssSubMenu.querySelectorAll(".menu-item");
+          omOssMenuItems.forEach((menuItem) => {
+            menuItem.style.display = "none";
+          });
+        }
       }
     }
   });
