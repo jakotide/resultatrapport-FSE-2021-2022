@@ -97,7 +97,12 @@ function navbar() {
         if (menuItemHasChildren.getAttribute("href") === "#selskaper") {
           const omOssMenuItems = document.querySelectorAll(".menu-item-has-children.om-oss .menu-item");
           omOssMenuItems.forEach((menuItem) => {
-            menuItem.style.display = "none";
+            menuItem.classList.add("hidden");
+          });
+        } else {
+          const omOssMenuItems = document.querySelectorAll(".menu-item-has-children.om-oss .menu-item");
+          omOssMenuItems.forEach((menuItem) => {
+            menuItem.classList.remove("hidden");
           });
         }
       }
@@ -131,6 +136,7 @@ function navbar() {
 }
 
 navbar();
+
 
 
 

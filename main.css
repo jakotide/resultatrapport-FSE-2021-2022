@@ -318,6 +318,10 @@ a{
 	background-size: cover;
 }
 
+.header .menu-item.hidden {
+  display: none;
+}
+
 /* To top button */
 
 .to-top-btn {
