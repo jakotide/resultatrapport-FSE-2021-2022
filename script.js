@@ -107,7 +107,9 @@ function navbar() {
     const omOssSubMenu = document.querySelector(".om-oss-menu");
 
     if (selskaperLink && omOssSubMenu) {
-      omOssSubMenu.classList.toggle("hidden");
+      const isActive = omOssSubMenu.classList.contains("active");
+      omOssSubMenu.classList.toggle("hidden", isActive);
+      omOssSubMenu.classList.toggle("active", !isActive);
     }
   }
 
@@ -116,7 +118,9 @@ function navbar() {
     const sosialeResultaterSubMenu = document.querySelector(".sosiale-resultater-menu");
 
     if (sosialeResultaterLink && sosialeResultaterSubMenu) {
-      sosialeResultaterSubMenu.classList.toggle("hidden");
+      const isActive = sosialeResultaterSubMenu.classList.contains("active");
+      sosialeResultaterSubMenu.classList.toggle("hidden", isActive);
+      sosialeResultaterSubMenu.classList.toggle("active", !isActive);
     }
   }
 
@@ -142,6 +146,7 @@ function navbar() {
 }
 
 navbar();
+
 
 
 
