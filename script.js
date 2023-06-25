@@ -110,7 +110,7 @@ function navbar() {
       if (selskaperLink.parentElement.classList.contains("active")) {
         omOssSubMenu.style.maxHeight = null;
       } else {
-        omOssSubMenu.style.maxHeight = omOssSubMenu.scrollHeight + "px";
+        omOssSubMenu.style.maxHeight = "0";
       }
     }
   }
@@ -135,6 +135,7 @@ function navbar() {
 }
 
 navbar();
+
 
 
 
