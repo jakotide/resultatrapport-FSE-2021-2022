@@ -99,13 +99,16 @@ function navbar() {
   });
 
   function collapseSubMenu() {
-    navMenu
-      .querySelector(".menu-item-has-children.active .sub-menu")
-      .removeAttribute("style");
-    navMenu
-      .querySelector(".menu-item-has-children.active")
-      .classList.remove("active");
+    const activeSubMenuItems = navMenu.querySelectorAll(".menu-item-has-children.active");
+  
+    activeSubMenuItems.forEach((menuItem) => {
+      menuItem.classList.remove("active");
+      const subMenu = menuItem.querySelector(".sub-menu");
+      subMenu.style.maxHeight = null;
+    });
   }
+  
+  
 
   function resizeFix() {
     if (navMenu.classList.contains("open")) {
