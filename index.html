@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <!-- CSS -->
   <link rel="stylesheet" href="main.css">
-  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
   <!-- JS -->
   <script src="script.js" defer></script>
   <title>Ferd</title>
@@ -15,7 +16,7 @@
 <body>
   <!-- Navbar -->
   
- <header>
+ <!-- <header>
   <nav>
     <div class="navbar">
       <div class="logo">
@@ -73,8 +74,79 @@
       </div>
     </div>
   </nav>
- </header>
+ </header> -->
+<!--=============== HEADER ===============-->
+<header class="header">
+  <nav class="nav container">
+     <div class="nav__data">
+      <div class="logo">
+        <img class="logo" src="/assets/FSE-Hvit.png">
+      </div>
+        
+        <div class="nav__toggle" id="nav-toggle">
+           <i class="ri-menu-line nav__burger"></i>
+           <i class="ri-close-line nav__close"></i>
+        </div>
+     </div>
 
+     <!--=============== NAV MENU ===============-->
+     <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+           <!--=============== DROPDOWN 1 ===============-->
+           <li class="dropdown__item">
+              <div class="nav__link">
+                 Om oss <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+              </div>
+
+              <ul class="dropdown__menu">
+                <li class="dropdown__link"><a href="#leder">Leder, Katinka Greve Leiner</a></li>
+                <li class="dropdown__link"><a href="#om-ferd">Om Ferd Sosiale Entreprenører</a></li>
+                <li class="dropdown__link"><a href="#milepæler">Milepæler</a></li>
+                <li class="dropdown__link"><a href="#investområder">Våre satsingssområder</a></li>
+                <li class="dropdown__link"><a href="#investprosess">Vår inversteringsprosess</a></li>
+                <li class="dropdown__link"><a href="#om-teamet">Om teamet</a></li>         
+              </ul>
+           </li>
+           
+           <!--=============== DROPDOWN 2 ===============-->
+           <li class="dropdown__item">
+              <div class="nav__link">
+                 Sosiale resultater <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+              </div>
+
+              <ul class="dropdown__menu">
+                <li class="dropdown__link"><a href="#bidrag">Vårt bidrag</a></li>
+                <li class="dropdown__link"><a href="#samlede">Porteføljens samlede resultater</a></li>                
+              </ul>
+           </li>
+           <li class="dropdown__item">
+              <div class="nav__link">
+                 Våre selskaper <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+              </div>
+
+              <ul class="dropdown__menu">
+                <li class="dropdown__link"><a href="#auticon">auticon</a></li>
+                <li class="dropdown__link"><a href="#generasjon">Generasjon M</a></li>
+                <li class="dropdown__link"><a href="#lifetools">Lifetools</a></li>
+                <li class="dropdown__link"><a href="#gammelnok">Gammel Nok</a></li>
+                <li class="dropdown__link"><a href="#ludenso">Ludenso</a></li>
+                <li class="dropdown__link"><a href="#mindmore">Mindmore</a></li>
+                <li class="dropdown__link"><a href="#kapitalfond">Den Sociale Kapitalfond</a></li>
+                <li class="dropdown__link"><a href="#autism">Autism Impact Fund</a></li>
+                <li class="dropdown__link"><a href="#isolation">No Isolation</a></li>
+                <li class="dropdown__link"><a href="#forskerfabrikken">Forskerfabrikken</a></li>
+                <li class="dropdown__link"><a href="#imal">IMAL</a></li>
+                <li class="dropdown__link"><a href="#motitech">Motitech</a></li>
+                <li class="dropdown__link"><a href="#atlas">Atlas Komeptanse</a></li>
+                <li class="dropdown__link"><a href="#medarbeiderne">Medarbeiderne</a></li>           
+              </ul>
+           </li>
+
+          
+        </ul>
+     </div>
+  </nav>
+</header>
 
   <main>
     <div class="trykk" id="trykk">

@@ -1,85 +1,62 @@
+// document.addEventListener('DOMContentLoaded', function() {
+//   var menuItems = document.querySelectorAll('.links li');
 
+//   menuItems.forEach(function(item) {
+//     var submenu = item.querySelector('.sub-menu');
+//     var link = item.querySelector('a');
+//     var arrow = item.querySelector('.arrow');
 
+//     if (arrow) {
+//       arrow.addEventListener('click', function() {
+//         if (submenu) {
+//           submenu.classList.toggle('show-sub-menu');
+//         }
+//       });
+//     }
 
-
-
-// // sidebar open close js code
-// let navLinks = document.querySelector(".nav-links");
-// let menuOpenBtn = document.querySelector(".navbar .bx-menu");
-// let menuCloseBtn = document.querySelector(".nav-links .bx-x");
-
-// menuOpenBtn.addEventListener("click", function () {
-//   navLinks.style.left = "0";
-// });
-
-// menuCloseBtn.addEventListener("click", function () {
-//   navLinks.style.left = "-100%";
-// });
-
-// // sidebar submenu open close js code
-// let subMenuLinks = document.querySelectorAll(".htmlCss-sub-menu > a");
-
-// subMenuLinks.forEach((link) => {
-//   link.addEventListener("click", function (event) {
-//     event.preventDefault();
-//     let subMenu = this.nextElementSibling;
-//     subMenu.classList.toggle("show-sub-menu");
-
-//     // Close previously opened submenus
-//     let openedSubMenus = document.querySelectorAll(".htmlCss-sub-menu.show-sub-menu");
-//     openedSubMenus.forEach((menu) => {
-//       if (menu !== subMenu && menu !== subMenu.parentElement) {
-//         menu.classList.remove("show-sub-menu");
-//       }
-//     });
+//     if (link) {
+//       link.addEventListener('click', function(event) {
+//         event.preventDefault();
+//         if (submenu) {
+//           submenu.classList.toggle('show-sub-menu');
+//         }
+//       });
+//     }
 //   });
+
+//   var sidebarToggle = document.querySelector('.bx-menu');
+//   var sidebarClose = document.querySelector('.bx-x');
+//   var navLinks = document.querySelector('.nav-links');
+
+//   if (sidebarToggle) {
+//     sidebarToggle.addEventListener('click', function() {
+//       navLinks.style.left = '0';
+//     });
+//   }
+
+//   if (sidebarClose) {
+//     sidebarClose.addEventListener('click', function() {
+//       navLinks.style.left = '-100%';
+//     });
+//   }
 // });
 
-document.addEventListener('DOMContentLoaded', function() {
-  var menuItems = document.querySelectorAll('.links li');
 
-  menuItems.forEach(function(item) {
-    var submenu = item.querySelector('.sub-menu');
-    var link = item.querySelector('a');
-    var arrow = item.querySelector('.arrow');
+/*=============== SHOW MENU ===============*/
+const showMenu = (toggleId, navId) =>{
+  const toggle = document.getElementById(toggleId),
+        nav = document.getElementById(navId)
 
-    if (arrow) {
-      arrow.addEventListener('click', function() {
-        submenu.classList.toggle('show-sub-menu');
-      });
-    }
+  toggle.addEventListener('click', () =>{
+      // Add show-menu class to nav menu
+      nav.classList.toggle('show-menu')
 
-    if (link) {
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
-        submenu.classList.remove('show-sub-menu');
-      });
-    }
-  });
+      // Add show-icon to show and hide the menu icon
+      toggle.classList.toggle('show-icon')
+  })
+}
 
-  var sidebarToggle = document.querySelector('.bx-menu');
-  var sidebarClose = document.querySelector('.bx-x');
-  var navLinks = document.querySelector('.nav-links');
-
-  if (sidebarToggle) {
-    sidebarToggle.addEventListener('click', function() {
-      navLinks.style.left = '0';
-    });
-  }
-
-  if (sidebarClose) {
-    sidebarClose.addEventListener('click', function() {
-      navLinks.style.left = '-100%';
-    });
-  }
-});
-
-
-
-
-
-
-
+showMenu('nav-toggle','nav-menu')
 
 
 
