@@ -438,7 +438,7 @@ footer {
   left: 0;
   top: 0;
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.9);
 }
@@ -453,7 +453,7 @@ footer {
 	/* transform: scale(1.5); */
   /* padding: 0 0 14rem 0; */
 	object-fit: contain;
-	top: 0;
+
 }
 
 .close-bg {
