@@ -39,20 +39,44 @@
 // showMenu('nav-toggle', 'nav-menu');
 
 
+// const showMenu = (toggleId, navId) => {
+//   const toggle = document.querySelector(`#${toggleId}`);
+//   const nav = document.querySelector(`#${navId}`);
+
+//   toggle.addEventListener('click', () => {
+//     // Toggle the show-menu class on the nav menu
+//     nav.classList.toggle('show-menu');
+
+//     // Toggle the show-icon class on the toggle button
+//     toggle.classList.toggle('show-icon');
+//   });
+// };
+
+// showMenu('nav-toggle', 'nav-menu');
+
 const showMenu = (toggleId, navId) => {
-  const toggle = document.querySelector(`#${toggleId}`);
-  const nav = document.querySelector(`#${navId}`);
+  const toggle = document.getElementById(toggleId);
+  const nav = document.getElementById(navId);
 
   toggle.addEventListener('click', () => {
-    // Toggle the show-menu class on the nav menu
     nav.classList.toggle('show-menu');
-
-    // Toggle the show-icon class on the toggle button
     toggle.classList.toggle('show-icon');
+  });
+
+  // Get all dropdown items
+  const dropdownItems = document.querySelectorAll('.dropdown__item');
+
+  // Attach click event listener to each dropdown item
+  dropdownItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      // Toggle the active class on the clicked dropdown item
+      item.classList.toggle('active');
+    });
   });
 };
 
 showMenu('nav-toggle', 'nav-menu');
+
 
 
 
