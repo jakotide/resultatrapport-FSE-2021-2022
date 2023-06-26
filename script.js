@@ -273,6 +273,7 @@ navbar();
 
 
 
+
 // Link offset
 
 // Smooth scrolling behavior with an offset of 100 pixels
