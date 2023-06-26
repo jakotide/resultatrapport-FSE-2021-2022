@@ -151,7 +151,6 @@ function navbar() {
   const navMenu = document.querySelector(".nav-menu");
   const menuOverlay = document.querySelector(".menu-overlay");
   const mediaSize = 991;
-  let activeSubMenu = null; // Declare activeSubMenu as a global variable
 
   openNavMenu.addEventListener("click", toggleNav);
   closeNavMenu.addEventListener("click", toggleNav);
@@ -161,9 +160,6 @@ function navbar() {
     navMenu.classList.toggle("open");
     menuOverlay.classList.toggle("active");
     document.body.classList.toggle("hidden-scrolling");
-    if (!navMenu.classList.contains("open")) {
-      collapseSubMenu();
-    }
   }
 
   navMenu.addEventListener("click", (event) => {
@@ -174,31 +170,53 @@ function navbar() {
       event.preventDefault();
       const menuItemHasChildren = event.target.parentElement;
 
-      if (menuItemHasChildren === activeSubMenu) {
+      if (menuItemHasChildren.classList.contains("active")) {
         collapseSubMenu();
       } else {
-        collapseSubMenu();
+        if (navMenu.querySelector(".menu-item-has-children.active")) {
+          collapseSubMenu();
+        }
         menuItemHasChildren.classList.add("active");
         const subMenu = menuItemHasChildren.querySelector(".sub-menu");
         subMenu.style.maxHeight = subMenu.scrollHeight + "px";
-        activeSubMenu = menuItemHasChildren;
       }
     }
   });
 
   function collapseSubMenu() {
-    if (activeSubMenu) {
-      activeSubMenu.querySelector(".sub-menu").removeAttribute("style");
-      activeSubMenu.classList.remove("active");
-      activeSubMenu = null;
+    navMenu.querySelector(".menu-item-has-children.active .sub-menu").removeAttribute("style");
+    navMenu.querySelector(".menu-item-has-children.active").classList.remove("active");
+  }
+
+  function toggleSubMenuVisibility(subMenuClassName) {
+    const subMenu = document.querySelector(subMenuClassName);
+    if (subMenu) {
+      subMenu.classList.toggle("hidden");
     }
+  }
+
+  function resetSubMenus() {
+    const subMenus = document.querySelectorAll(".sub-menu");
+    subMenus.forEach((subMenu) => {
+      subMenu.style.maxHeight = null;
+    });
+  }
+
+  function toggleSubMenuLinks() {
+    const menuItems = document.querySelectorAll(".menu-item-has-children");
+    menuItems.forEach((menuItem) => {
+      menuItem.addEventListener("click", () => {
+        resetSubMenus();
+        collapseSubMenu();
+      });
+    });
   }
 
   function resizeFix() {
     if (navMenu.classList.contains("open")) {
       toggleNav();
     }
-    if (activeSubMenu) {
+    if (navMenu.querySelector(".menu-item-has-children.active")) {
       collapseSubMenu();
     }
   }
@@ -225,17 +243,7 @@ function navbar() {
     toggleSubMenuVisibility(".vare-selskaper-menu");
   });
 
-  function toggleSubMenuVisibility(subMenuClassName) {
-    const subMenu = document.querySelector(subMenuClassName);
-    if (subMenu) {
-      const isActive = subMenu.classList.contains("hidden");
-      collapseSubMenu();
-      if (isActive) {
-        subMenu.classList.remove("hidden");
-        activeSubMenu = subMenu.parentElement;
-      }
-    }
-  }
+  toggleSubMenuLinks(); // Call the function to handle link toggling
 
   resizeFix(); // Call the function initially to ensure correct visibility
 
@@ -246,6 +254,7 @@ function navbar() {
 }
 
 navbar();
+
 
 
 
