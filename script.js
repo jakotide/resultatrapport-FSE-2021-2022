@@ -184,8 +184,11 @@ function navbar() {
   });
 
   function collapseSubMenu() {
-    navMenu.querySelector(".menu-item-has-children.active .sub-menu").removeAttribute("style");
-    navMenu.querySelector(".menu-item-has-children.active").classList.remove("active");
+    const activeSubMenu = navMenu.querySelector(".menu-item-has-children.active .sub-menu");
+    if (activeSubMenu) {
+      activeSubMenu.removeAttribute("style");
+      navMenu.querySelector(".menu-item-has-children.active").classList.remove("active");
+    }
   }
 
   function toggleSubMenuVisibility(subMenuClassName) {
