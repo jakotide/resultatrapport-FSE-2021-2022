@@ -151,6 +151,7 @@ function navbar() {
   const navMenu = document.querySelector(".nav-menu");
   const menuOverlay = document.querySelector(".menu-overlay");
   const mediaSize = 991;
+  let activeSubMenu = null; // Declare activeSubMenu as a global variable
 
   openNavMenu.addEventListener("click", toggleNav);
   closeNavMenu.addEventListener("click", toggleNav);
@@ -160,6 +161,9 @@ function navbar() {
     navMenu.classList.toggle("open");
     menuOverlay.classList.toggle("active");
     document.body.classList.toggle("hidden-scrolling");
+    if (!navMenu.classList.contains("open")) {
+      collapseSubMenu();
+    }
   }
 
   navMenu.addEventListener("click", (event) => {
@@ -170,28 +174,23 @@ function navbar() {
       event.preventDefault();
       const menuItemHasChildren = event.target.parentElement;
 
-      if (menuItemHasChildren.classList.contains("active")) {
+      if (menuItemHasChildren === activeSubMenu) {
         collapseSubMenu();
       } else {
-        if (navMenu.querySelector(".menu-item-has-children.active")) {
-          collapseSubMenu();
-        }
+        collapseSubMenu();
         menuItemHasChildren.classList.add("active");
         const subMenu = menuItemHasChildren.querySelector(".sub-menu");
         subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+        activeSubMenu = menuItemHasChildren;
       }
     }
   });
 
   function collapseSubMenu() {
-    navMenu.querySelector(".menu-item-has-children.active .sub-menu").removeAttribute("style");
-    navMenu.querySelector(".menu-item-has-children.active").classList.remove("active");
-  }
-
-  function toggleSubMenuVisibility(subMenuClassName) {
-    const subMenu = document.querySelector(subMenuClassName);
-    if (subMenu) {
-      subMenu.classList.toggle("hidden");
+    if (activeSubMenu) {
+      activeSubMenu.querySelector(".sub-menu").removeAttribute("style");
+      activeSubMenu.classList.remove("active");
+      activeSubMenu = null;
     }
   }
 
@@ -199,7 +198,7 @@ function navbar() {
     if (navMenu.classList.contains("open")) {
       toggleNav();
     }
-    if (navMenu.querySelector(".menu-item-has-children.active")) {
+    if (activeSubMenu) {
       collapseSubMenu();
     }
   }
@@ -223,21 +222,31 @@ function navbar() {
   });
 
   vareSelskaperLink.addEventListener("click", () => {
-    if (window.innerWidth <= mediaSize) {
-      toggleSubMenuVisibility(".om-oss-menu");
-      toggleSubMenuVisibility(".sosiale-resultater-menu");
-    }
+    toggleSubMenuVisibility(".vare-selskaper-menu");
   });
+
+  function toggleSubMenuVisibility(subMenuClassName) {
+    const subMenu = document.querySelector(subMenuClassName);
+    if (subMenu) {
+      const isActive = subMenu.classList.contains("hidden");
+      collapseSubMenu();
+      if (isActive) {
+        subMenu.classList.remove("hidden");
+        activeSubMenu = subMenu.parentElement;
+      }
+    }
+  }
 
   resizeFix(); // Call the function initially to ensure correct visibility
 
   // Hide submenus by default
-  document.querySelectorAll(".om-oss-menu, .sosiale-resultater-menu").forEach((subMenu) => {
+  document.querySelectorAll(".om-oss-menu, .sosiale-resultater-menu, .vare-selskaper-menu").forEach((subMenu) => {
     subMenu.classList.add("hidden");
   });
 }
 
 navbar();
+
 
 
 
