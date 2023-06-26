@@ -173,21 +173,35 @@ function navbar() {
       const menuItemHasChildren = event.target.parentElement;
 
       if (menuItemHasChildren.classList.contains("active")) {
-        collapseSubMenu();
+        collapseSubMenu(menuItemHasChildren);
       } else {
         if (navMenu.querySelector(".menu-item-has-children.active")) {
-          collapseSubMenu();
+          collapseSubMenu(navMenu.querySelector(".menu-item-has-children.active"));
         }
-        menuItemHasChildren.classList.add("active");
-        const subMenu = menuItemHasChildren.querySelector(".sub-menu");
-        subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+        expandSubMenu(menuItemHasChildren);
       }
     }
   });
 
-  function collapseSubMenu() {
-    navMenu.querySelector(".menu-item-has-children.active .sub-menu").removeAttribute("style");
-    navMenu.querySelector(".menu-item-has-children.active").classList.remove("active");
+  function collapseSubMenu(menuItem) {
+    menuItem.classList.remove("active");
+    const subMenu = menuItem.querySelector(".sub-menu");
+    subMenu.style.maxHeight = null;
+  }
+
+  function expandSubMenu(menuItem) {
+    menuItem.classList.add("active");
+    const subMenu = menuItem.querySelector(".sub-menu");
+    subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+  }
+
+  function hideOtherSubMenus(activeSubMenu) {
+    const subMenus = Array.from(navMenu.querySelectorAll(".sub-menu"));
+    subMenus.forEach((subMenu) => {
+      if (subMenu !== activeSubMenu) {
+        subMenu.style.maxHeight = null;
+      }
+    });
   }
 
   function hideOmOssSubMenu() {
@@ -221,7 +235,7 @@ function navbar() {
       toggleNav();
     }
     if (navMenu.querySelector(".menu-item-has-children.active")) {
-      collapseSubMenu();
+      collapseSubMenu(navMenu.querySelector(".menu-item-has-children.active"));
     }
     hideOmOssSubMenu();
     hideSosialeResultaterSubMenu();
@@ -233,11 +247,10 @@ function navbar() {
     }
   });
 
+  hideOtherSubMenus();
   hideOmOssSubMenu(); // Call the function initially to hide "Om oss" submenu if needed
-  hideSosialeResultaterSubMenu(); // Call the function initially to hide "Sosiale resultater" submenu if needed
-}
+  hideSosialeResultaterSubMenu(); //
 
-navbar();
 
 
 
