@@ -146,7 +146,6 @@
 // navbar();
 
 
-
 function navbar() {
   const openNavMenu = document.querySelector(".open-nav-menu");
   const closeNavMenu = document.querySelector(".close-nav-menu");
@@ -218,18 +217,19 @@ function navbar() {
   }
 
   function hideSosialeResultaterSubMenu() {
-    const sosialeResultaterLink = document.querySelector('a[href="#sosiale-resultater"]');
+    const sosialeResultaterLink = document.querySelector('a[href="#resultater"]');
     const sosialeResultaterSubMenu = document.querySelector(".sosiale-resultater-menu");
-
+  
     if (sosialeResultaterLink && sosialeResultaterSubMenu) {
       if (sosialeResultaterLink.parentElement.classList.contains("active")) {
-        sosialeResultaterSubMenu.classList.remove("hidden");
-      } else {
         sosialeResultaterSubMenu.classList.add("hidden");
+      } else {
+        sosialeResultaterSubMenu.classList.remove("hidden");
       }
     }
   }
-
+  
+  
   function resizeFix() {
     if (navMenu.classList.contains("open")) {
       toggleNav();
@@ -247,21 +247,11 @@ function navbar() {
     }
   });
 
-  hideOtherSubMenus();
   hideOmOssSubMenu(); // Call the function initially to hide "Om oss" submenu if needed
-  hideSosialeResultaterSubMenu(); //
+  hideSosialeResultaterSubMenu(); // Call the function initially to hide "Sosiale resultater" submenu if needed
+}
 
-  navbar();
-
-
-
-
-
-
-
-
-
-
+navbar();
 
 
 
@@ -335,8 +325,5 @@ window.addEventListener("click", (event) => {
 modal.addEventListener("click", () => {
   modal.style.display = "none";
   document.body.style.overflow = "visible";
-})
-
-
-
+});
 
