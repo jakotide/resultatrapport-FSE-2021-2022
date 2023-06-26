@@ -7,72 +7,75 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <!-- CSS -->
   <link rel="stylesheet" href="main.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <!-- JS -->
   <script src="script.js" defer></script>
   <title>Ferd</title>
 </head>
 <body>
   <!-- Navbar -->
-  <header class="header">
-    <div class="container">
-       <div class="header-main">
-          <div class="logo">
-            <img class="logo" src="/assets/FSE-Hvit.png">
-          </div>
-          <div class="open-nav-menu">
-             <span></span>
-          </div>
-          <div class="menu-overlay">
-          </div>
-          <nav class="nav-menu">
-            <div class="close-nav-menu">
-               <i class="fa-solid fa-xmark fa-5xs close-nav"></i>
-            </div>
-            <ul class="menu">
-               <li class="menu-item menu-item-has-children">
-                  <a href="#om-oss" data-toggle="sub-menu">Om oss <i class="plus"></i></a>
-                  <ul class="sub-menu om-oss-menu hidden">
-                    <li class="menu-item"><a href="#leder">Leder, Katinka Greve Leiner</a></li>
-                    <li class="menu-item"><a href="#om-ferd">Om Ferd Sosiale Entreprenører</a></li>
-                    <li class="menu-item"><a href="#milepæler">Milepæler</a></li>
-                    <li class="menu-item"><a href="#investområder">Våre satsingssområder</a></li>
-                    <li class="menu-item"><a href="#investprosess">Vår inversteringsprosess</a></li>
-                    <li class="menu-item"><a href="#om-teamet">Om teamet</a></li>
-                  </ul>
-               </li>
-               <li class="menu-item menu-item-has-children">
-                <a href="#resultater" data-toggle="sub-menu">Sosiale resultater <i class="plus"></i></a>
-                <ul class="sub-menu sosiale-resultater-menu hidden">
-                   <li class="menu-item"><a href="#bidrag">Vårt bidrag</a></li>
-                   <li class="menu-item"><a href="#samlede">Porteføljens samlede resultater</a></li>
-                </ul>
-             </li>
-             
-               <li class="menu-item menu-item-has-children">
-                  <a href="#selskaper" data-toggle="sub-menu">Våre selskaper <i class="plus"></i></a>
-                  <ul class="sub-menu vare-selskaper-menu">
-                    <li class="menu-item"><a href="#unicus">Unicus</a></li>
-                    <li class="menu-item"><a href="#auticon">auticon</a></li>
-                    <li class="menu-item"><a href="#generasjon">Generasjon M</a></li>
-                    <li class="menu-item"><a href="#lifetools">Lifetools</a></li>
-                    <li class="menu-item"><a href="#gammelnok">Gammel Nok</a></li>
-                    <li class="menu-item"><a href="#ludenso">Ludenso</a></li>
-                    <li class="menu-item"><a href="#mindmore">Mindmore</a></li>
-                    <li class="menu-item"><a href="#kapitalfond">Den Sociale Kapitalfond</a></li>
-                    <li class="menu-item"><a href="#autism">Autism Impact Fund</a></li>
-                    <li class="menu-item"><a href="#isolation">No Isolation</a></li>
-                    <li class="menu-item"><a href="#forskerfabrikken">Forskerfabrikken</a></li>
-                    <li class="menu-item"><a href="#imal">IMAL</a></li>
-                    <li class="menu-item"><a href="#motitech">Motitech</a></li>
-                    <li class="menu-item"><a href="#atlas">Atlas Komeptanse</a></li>
-                    <li class="menu-item"><a href="#medarbeiderne">Medarbeiderne</a></li>
-                  </ul>
-               </li>
+  
+ <header>
+  <nav>
+    <div class="navbar">
+      <div class="logo">
+        <img class="logo" src="/assets/FSE-Hvit.png">
+      </div>
+      <i class='bx bx-menu'></i>
+      
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li>
+            <a class="om-oss-link" href="#om-oss">Om oss</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a href="#leder">Leder, Katinka Greve Leiner</a></li>
+              <li><a href="#om-ferd">Om Ferd Sosiale Entreprenører</a></li>
+              <li><a href="#milepæler">Milepæler</a></li>
+              <li><a href="#investområder">Våre satsingssområder</a></li>
+              <li><a href="#investprosess">Vår inversteringsprosess</a></li>
+              <li><a href="#om-teamet">Om teamet</a></li>
             </ul>
-          </nav>
-       </div>
+          </li>
+          <li>
+            <a class="om-oss-link" href="#resultater">Sosiale resultater</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li class="menu-item"><a href="#bidrag">Vårt bidrag</a></li>
+              <li class="menu-item"><a href="#samlede">Porteføljens samlede resultater</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="om-oss-link" href="#selskaper">Våre selskaper</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a href="#unicus">Unicus</a></li>
+                <li><a href="#auticon">auticon</a></li>
+                <li><a href="#generasjon">Generasjon M</a></li>
+                <li><a href="#lifetools">Lifetools</a></li>
+                <li><a href="#gammelnok">Gammel Nok</a></li>
+                <li><a href="#ludenso">Ludenso</a></li>
+                <li><a href="#mindmore">Mindmore</a></li>
+                <li><a href="#kapitalfond">Den Sociale Kapitalfond</a></li>
+                <li><a href="#autism">Autism Impact Fund</a></li>
+                <li><a href="#isolation">No Isolation</a></li>
+                <li><a href="#forskerfabrikken">Forskerfabrikken</a></li>
+                <li><a href="#imal">IMAL</a></li>
+                <li><a href="#motitech">Motitech</a></li>
+                <li><a href="#atlas">Atlas Komeptanse</a></li>
+                <li><a href="#medarbeiderne">Medarbeiderne</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
  </header>
+
+
   <main>
     <div class="trykk" id="trykk">
       <p>Trykk på bildet for å forstørre</p>
