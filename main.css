@@ -71,11 +71,24 @@ main {
 }
 
 .trykk {
-  color: white;
-  margin-top: 150px;
+  color: var(--clr-dark-blue);
+  margin-top: 140px;
   width: 100%;
+	height: 160px;
   display: flex;
   justify-content: center;
+	align-items: center;
+}
+
+.trykk p {
+	background-color: white;
+	color: var(--clr-dark-blue);
+	height: 60px;
+	width: 280px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
 }
 
 .page-container {
