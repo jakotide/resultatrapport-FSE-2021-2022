@@ -1,81 +1,144 @@
-
-// /*=============== SHOW MENU ===============*/
-// const showMenu = (toggleId, navId) =>{
-//   const toggle = document.getElementById(toggleId),
-//         nav = document.getElementById(navId)
-
-//   toggle.addEventListener('click', () =>{
-//       // Add show-menu class to nav menu
-//       nav.classList.toggle('show-menu')
-
-//       // Add show-icon to show and hide the menu icon
-//       toggle.classList.toggle('show-icon')
-//   })
-// }
-
-// showMenu('nav-toggle','nav-menu')
-
 // const showMenu = (toggleId, navId) => {
 //   const toggle = document.getElementById(toggleId);
 //   const nav = document.getElementById(navId);
 
 //   toggle.addEventListener('click', () => {
-//     // Toggle the show-menu class on the nav menu
-//     if (nav.classList.contains('show-menu')) {
-//       nav.classList.remove('show-menu');
-//     } else {
-//       nav.classList.add('show-menu');
-//     }
-
-//     // Toggle the show-icon class on the toggle button
-//     if (toggle.classList.contains('show-icon')) {
-//       toggle.classList.remove('show-icon');
-//     } else {
-//       toggle.classList.add('show-icon');
-//     }
-//   });
-// };
-
-// showMenu('nav-toggle', 'nav-menu');
-
-
-// const showMenu = (toggleId, navId) => {
-//   const toggle = document.querySelector(`#${toggleId}`);
-//   const nav = document.querySelector(`#${navId}`);
-
-//   toggle.addEventListener('click', () => {
-//     // Toggle the show-menu class on the nav menu
 //     nav.classList.toggle('show-menu');
-
-//     // Toggle the show-icon class on the toggle button
 //     toggle.classList.toggle('show-icon');
 //   });
+
+//   // Get all dropdown items
+//   const dropdownItems = document.querySelectorAll('.dropdown__item');
+
+//   // Attach click event listener to each dropdown item
+//   dropdownItems.forEach((item) => {
+//     item.addEventListener('click', () => {
+//       // Toggle the active class on the clicked dropdown item
+//       item.classList.toggle('active');
+//     });
+//   });
 // };
 
 // showMenu('nav-toggle', 'nav-menu');
+
+// const showMenu = (toggleId, navId) => {
+//   const toggle = document.getElementById(toggleId);
+//   const nav = document.getElementById(navId);
+
+//   const closeMenu = () => {
+//     nav.classList.remove('show-menu');
+//     toggle.classList.remove('show-icon');
+//   };
+
+//   toggle.addEventListener('click', () => {
+//     nav.classList.toggle('show-menu');
+//     toggle.classList.toggle('show-icon');
+//   });
+
+//   // Get all dropdown items
+//   const dropdownItems = document.querySelectorAll('.dropdown__item');
+
+//   // Attach click event listener to each dropdown item
+//   dropdownItems.forEach((item) => {
+//     const link = item.querySelector('.nav__link');
+//     const submenu = item.querySelector('.dropdown__menu');
+
+//     link.addEventListener('click', () => {
+//       const isActive = item.classList.contains('active');
+
+//       // Close the submenu if it's already open
+//       if (isActive && submenu.classList.contains('show-submenu')) {
+//         submenu.classList.remove('show-submenu');
+//         item.classList.remove('active');
+//       } else {
+//         // Close other open submenus and remove active classes
+//         dropdownItems.forEach((otherItem) => {
+//           const otherSubmenu = otherItem.querySelector('.dropdown__menu');
+//           otherSubmenu.classList.remove('show-submenu');
+//           otherItem.classList.remove('active');
+//         });
+
+//         // Open the clicked submenu
+//         submenu.classList.add('show-submenu');
+//         item.classList.add('active');
+//       }
+//     });
+//   });
+
+//   // Close the menu when clicking outside
+//   document.addEventListener('click', (event) => {
+//     const target = event.target;
+//     if (!nav.contains(target) && !toggle.contains(target)) {
+//       closeMenu();
+//     }
+//   });
+// };
+
+// showMenu('nav-toggle', 'nav-menu');
+
+
+
+
 
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId);
   const nav = document.getElementById(navId);
+
+  const closeMenu = () => {
+    nav.classList.remove('show-menu');
+    toggle.classList.remove('show-icon');
+  };
 
   toggle.addEventListener('click', () => {
     nav.classList.toggle('show-menu');
     toggle.classList.toggle('show-icon');
   });
 
-  // Get all dropdown items
   const dropdownItems = document.querySelectorAll('.dropdown__item');
 
-  // Attach click event listener to each dropdown item
   dropdownItems.forEach((item) => {
-    item.addEventListener('click', () => {
-      // Toggle the active class on the clicked dropdown item
-      item.classList.toggle('active');
+    const link = item.querySelector('.nav__link');
+    const submenu = item.querySelector('.dropdown__menu');
+
+    link.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent the link from triggering navigation
+
+      const isActive = item.classList.contains('active');
+
+      dropdownItems.forEach((otherItem) => {
+        const otherSubmenu = otherItem.querySelector('.dropdown__menu');
+        otherSubmenu.classList.remove('show-submenu');
+        otherItem.classList.remove('active');
+      });
+
+      if (!isActive) {
+        submenu.classList.add('show-submenu');
+        item.classList.add('active');
+      } else {
+        submenu.classList.remove('show-submenu');
+        item.classList.remove('active');
+      }
     });
+  });
+
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (!nav.contains(target) && !toggle.contains(target)) {
+      closeMenu();
+    }
   });
 };
 
 showMenu('nav-toggle', 'nav-menu');
+
+
+
+
+
+
+
+
 
 
 
