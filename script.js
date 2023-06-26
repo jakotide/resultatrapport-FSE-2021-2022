@@ -206,15 +206,16 @@ function navbar() {
   function hideOmOssSubMenu() {
     const selskaperLink = document.querySelector('a[href="#selskaper"]');
     const omOssSubMenu = document.querySelector(".om-oss-menu");
-
+  
     if (selskaperLink && omOssSubMenu) {
       if (selskaperLink.parentElement.classList.contains("active")) {
-        omOssSubMenu.classList.add("hidden");
+        omOssSubMenu.style.maxHeight = null;
       } else {
-        omOssSubMenu.classList.remove("hidden");
+        omOssSubMenu.style.maxHeight = omOssSubMenu.scrollHeight + "px";
       }
     }
   }
+  
 
   function hideSosialeResultaterSubMenu() {
     const sosialeResultaterLink = document.querySelector('a[href="#resultater"]');
