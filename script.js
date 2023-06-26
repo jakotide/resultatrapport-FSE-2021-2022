@@ -251,7 +251,7 @@ function navbar() {
   hideOmOssSubMenu(); // Call the function initially to hide "Om oss" submenu if needed
   hideSosialeResultaterSubMenu(); //
 
-
+  navbar();
 
 
 
