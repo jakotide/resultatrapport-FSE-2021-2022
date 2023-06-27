@@ -1,17 +1,72 @@
 // Navigation bar
 
+// const showMenu = (toggleId, navId) => {
+//   const toggle = document.getElementById(toggleId);
+//   const nav = document.getElementById(navId);
+
+//   const closeMenu = () => {
+//     nav.classList.remove('show-menu');
+//     toggle.classList.remove('show-icon');
+//   };
+
+//   toggle.addEventListener('click', () => {
+//     nav.classList.toggle('show-menu');
+//     toggle.classList.toggle('show-icon');
+//   });
+
+//   const dropdownItems = document.querySelectorAll('.dropdown__item');
+
+//   dropdownItems.forEach((item) => {
+//     const link = item.querySelector('.nav__link');
+//     const submenu = item.querySelector('.dropdown__menu');
+
+//     link.addEventListener('click', (event) => {
+//       event.preventDefault(); // Prevent the link from triggering navigation
+
+//       const isActive = item.classList.contains('active');
+
+//       dropdownItems.forEach((otherItem) => {
+//         const otherSubmenu = otherItem.querySelector('.dropdown__menu');
+//         otherSubmenu.style.maxHeight = '0';
+//         otherItem.classList.remove('active');
+//       });
+
+//       if (!isActive) {
+//         submenu.style.maxHeight = submenu.scrollHeight + 'px';
+//         item.classList.add('active');
+//       } else {
+//         submenu.style.maxHeight = '0';
+//         item.classList.remove('active');
+//       }
+//     });
+//   });
+
+//   document.addEventListener('click', (event) => {
+//     const target = event.target;
+
+//     if (!nav.contains(target) && !toggle.contains(target)) {
+//       closeMenu();
+//     }
+//   });
+// };
+
+// showMenu('nav-toggle', 'nav-menu');
+
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId);
   const nav = document.getElementById(navId);
+  const body = document.body;
 
   const closeMenu = () => {
     nav.classList.remove('show-menu');
     toggle.classList.remove('show-icon');
+    body.classList.remove('no-scroll'); // Remove no-scroll class from body
   };
 
   toggle.addEventListener('click', () => {
     nav.classList.toggle('show-menu');
     toggle.classList.toggle('show-icon');
+    body.classList.toggle('no-scroll'); // Toggle no-scroll class on body
   });
 
   const dropdownItems = document.querySelectorAll('.dropdown__item');
@@ -51,6 +106,9 @@ const showMenu = (toggleId, navId) => {
 };
 
 showMenu('nav-toggle', 'nav-menu');
+
+
+
 
 
 // Link offset
