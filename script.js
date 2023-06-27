@@ -56,12 +56,22 @@ const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId);
   const nav = document.getElementById(navId);
   const body = document.body;
-  const dropDownLink = document.querySelector(".dropdown__link");
+
 
   const closeMenu = () => {
     nav.classList.remove('show-menu');
     toggle.classList.remove('show-icon');
     body.classList.remove('no-scroll'); // Remove no-scroll class from body
+    
+  const activeItems = document.querySelectorAll('.active');
+  activeItems.forEach((item) => {
+    item.classList.remove('active');
+    const submenu = item.querySelector('.dropdown__menu');
+    if (submenu) {
+      submenu.style.maxHeight = '0';
+    }
+  });
+
   };
 
   toggle.addEventListener('click', () => {
@@ -102,8 +112,14 @@ const showMenu = (toggleId, navId) => {
     link.addEventListener('click', () => {
       // Close the menu after clicking a dropdown link
       closeMenu();
+      
     });
   });
+
+  const appendiksLink = document.querySelector(".appendiks-mobil");
+  appendiksLink.addEventListener("click", () => {
+    closeMenu();
+  })
 
   document.addEventListener('click', (event) => {
     const target = event.target;
