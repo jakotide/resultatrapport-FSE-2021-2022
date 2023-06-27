@@ -191,12 +191,12 @@ toTopButton();
 //   document.body.style.overflow = "visible";
 // });
 
-// Check if the screen width is 450px or above
-if (window.matchMedia("(min-width: 450px)").matches) {
+
+
   // Get the modal element and the image elements
   const modal = document.getElementById("modal");
   const modalImage = document.getElementById("modal-image");
-  const images = document.querySelectorAll(".page-container img, .page-container-small img");
+  const images = document.querySelectorAll(".page-container img");
 
   // Attach a click event listener to each image
   images.forEach((image) => {
@@ -229,6 +229,6 @@ if (window.matchMedia("(min-width: 450px)").matches) {
     modal.style.display = "none";
     document.body.style.overflow = "visible";
   });
-}
+
 
 
