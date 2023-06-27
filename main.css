@@ -233,9 +233,9 @@ main {
   text-decoration: none;
 }
 
-.appendiks-mobil {
+/* .appendiks-mobil {
   padding-bottom: 7rem;
-}
+} */
 
 .nav__link:hover {
   background-color: var(--clr-blue);
@@ -317,9 +317,10 @@ main {
   transform: rotate(180deg);
 }
 
-/* .link-fill {
-  padding-bottom: 5rem;
-} */ 
+.link-fill {
+  padding-bottom: 10rem;
+  cursor: auto;
+} 
 
 .desktop-fill {
   padding: 1.92rem 0;
@@ -401,8 +402,8 @@ footer {
   color: var(--clr-varm-grey)
 }
 
-.arrow__down {
-  padding-left: 7px;
+.trykk__her {
+  border-bottom: 1px solid white;
 }
 
 /* Modal Image */
@@ -668,11 +669,6 @@ footer {
     padding-top: 3.5rem;
   }
 
-  .appendiks__footer__link {
-    max-width: 200px;
-    height: 10px;
-    display: block;
-  }
 }
 
 @media screen and (max-width: 340px) {
