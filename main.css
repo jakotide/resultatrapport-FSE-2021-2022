@@ -226,6 +226,11 @@ main {
 	list-style: none;
 }
 
+.appendiks-desktop {
+  color: white;
+  text-decoration: none;
+}
+
 .nav__link:hover {
   background-color: var(--clr-blue);
 }
