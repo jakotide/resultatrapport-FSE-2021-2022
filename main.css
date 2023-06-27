@@ -358,7 +358,7 @@ main {
     opacity: 0;
     pointer-events: none;
     transition: opacity .3s, top .3s;
-		width: 280px;
+		width: 300px;
   }
 
   .dropdown__link {
