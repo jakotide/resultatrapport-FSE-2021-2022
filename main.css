@@ -124,10 +124,6 @@ main {
   overflow: hidden;
 }
 
-.nav-mobile {
-  display: none;
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -182,7 +178,13 @@ main {
 }
 
 /* Navigation for mobile devices */
-@media screen and (max-width: 1118px) {
+@media (max-width: 1180px) {
+  .nav-mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1117px) {
   .nav__menu {
     position: absolute;
     left: 0;
@@ -205,8 +207,9 @@ main {
 	.nav__link, .dropdown__link {
 		-webkit-tap-highlight-color: transparent;
 	}
+
   .nav-mobile {
-    display: none;
+    display: block;
   }
 }
 
@@ -332,6 +335,8 @@ main {
 }
 
 /* For large devices */
+
+
 @media screen and (min-width: 1118px) {
   .container {
     margin-inline: auto;
@@ -392,9 +397,6 @@ main {
     top: 5.5rem;
     pointer-events: initial;
     transition: top .3s;
-  }
-  .nav-mobile {
-    display: none;
   }
 }
 
@@ -531,14 +533,16 @@ footer {
 }
 }
 
+@media (min-width: 1181px) {
+  .nav-mobile {
+    display: none;
+  }
+}
+
 @media (max-width: 1180px) {
 	.page-container,
   .nav-desktop {
     display: none;
-  }
-
-  .nav-mobile {
-    display: block;
   }
 
 	.page-container-small {
