@@ -124,6 +124,10 @@ main {
   overflow: hidden;
 }
 
+.nav-mobile {
+  display: none;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -201,6 +205,9 @@ main {
 	.nav__link, .dropdown__link {
 		-webkit-tap-highlight-color: transparent;
 	}
+  .nav-mobile {
+    display: none;
+  }
 }
 
 .nav {
@@ -381,6 +388,9 @@ main {
     pointer-events: initial;
     transition: top .3s;
   }
+  .nav-mobile {
+    display: none;
+  }
 }
 
 /* To top button */
@@ -517,8 +527,13 @@ footer {
 }
 
 @media (max-width: 1180px) {
-	.page-container {
+	.page-container,
+  .nav-desktop {
     display: none;
+  }
+
+  .nav-mobile {
+    display: block;
   }
 
 	.page-container-small {
