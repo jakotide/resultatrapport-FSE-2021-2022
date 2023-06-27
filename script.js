@@ -56,6 +56,7 @@ const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId);
   const nav = document.getElementById(navId);
   const body = document.body;
+  const dropDownLink = document.querySelector(".dropdown__link");
 
   const closeMenu = () => {
     nav.classList.remove('show-menu');
@@ -93,6 +94,14 @@ const showMenu = (toggleId, navId) => {
         submenu.style.maxHeight = '0';
         item.classList.remove('active');
       }
+    });
+  });
+
+  const dropdownLinks = document.querySelectorAll('.dropdown__link');
+  dropdownLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      // Close the menu after clicking a dropdown link
+      closeMenu();
     });
   });
 

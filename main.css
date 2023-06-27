@@ -459,6 +459,27 @@ footer {
   padding-top: 6.5rem;
 }
 
+.appendiks__footer__link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.appendiks__footer__link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background-position: center bottom;
+  background: white;
+  transition: width .3s ease-in;
+}
+
+.appendiks__footer__link:hover::after {
+  width: 22%;
+}
+
 /* Modal Image */
 
 .modal {
