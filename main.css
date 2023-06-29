@@ -322,6 +322,10 @@ main {
   cursor: auto;
 } 
 
+.link-fill:hover {
+  background-color: var(--clr-dark-blue);
+}
+
 .desktop-fill {
   padding: 1.92rem 0;
 }
