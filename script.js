@@ -100,7 +100,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // To top button
-
 const toTopBtn = document.querySelector(".to-top-btn");
 
 function toTopButton(){
