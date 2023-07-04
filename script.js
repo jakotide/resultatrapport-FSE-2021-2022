@@ -117,7 +117,7 @@ toTopButton();
   // Get the modal element and the image elements
   const modal = document.getElementById("modal");
   const modalImage = document.getElementById("modal-image");
-  const images = document.querySelectorAll(".page-container img");
+  const images = document.querySelectorAll(".page-container div img");
 
   // Attach a click event listener to each image
   images.forEach((image) => {
@@ -150,6 +150,7 @@ toTopButton();
     modal.style.display = "none";
     document.body.style.overflow = "visible";
   });
+
 
 
 
