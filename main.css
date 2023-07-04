@@ -118,6 +118,12 @@ main {
   margin-inline: 1.5rem;
 }
 
+.page-container div img {
+  position: relative;
+  top: 120px;
+  z-index: -5;
+}
+
 /* Navbar */
 
 .no-scroll {
