@@ -121,14 +121,14 @@ main {
 
 .page-container div img {
   position: relative;
-  top: 125px;
+  top: 110px;
   /* z-index: 0; */
   margin: auto;
 }
 
 .page-container-small div img {
   position: relative;
-  top: 65px;
+  top: 90px;
   z-index: -5;
   margin: auto;
 }
