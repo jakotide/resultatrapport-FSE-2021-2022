@@ -128,7 +128,7 @@ main {
 
 .page-container-small div img {
   position: relative;
-  top: 60px;
+  top: 65px;
   z-index: -5;
   margin: auto;
 }
