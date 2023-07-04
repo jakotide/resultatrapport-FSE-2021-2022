@@ -124,6 +124,12 @@ main {
   z-index: -5;
 }
 
+.page-container-small div img {
+  position: relative;
+  top: 80px;
+  z-index: -5;
+}
+
 /* Navbar */
 
 .no-scroll {
