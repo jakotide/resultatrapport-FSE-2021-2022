@@ -144,7 +144,6 @@ main {
   left: 0;
   width: 100%;
   background-color: var(--clr-dark-blue);
-  background-color: red;
   box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
   z-index: var(--z-fixed);
 }
@@ -368,7 +367,7 @@ main {
   transition: all .4s;
   text-decoration: none;
   cursor: pointer;
-  z-index: 5;
+  z-index: 75;
 }
 
 .to-top-btn.active {
