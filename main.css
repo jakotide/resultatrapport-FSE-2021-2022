@@ -385,7 +385,7 @@ main {
 footer {
   height: 32rem;
   background-color: var(--clr-dark-blue);
-  margin-top: 100px;
+  margin-top: 160px;
 }
 
 .footer-content {
@@ -615,9 +615,9 @@ footer {
 		display: none;
 	}
 
-  .page-container-small {
+  /* .page-container-small {
 		padding-top: 50px;
-	}
+	} */
 }
 
 @media(max-width: 991px){
