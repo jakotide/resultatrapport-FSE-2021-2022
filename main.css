@@ -71,12 +71,12 @@ main {
 
 .trykk {
   color: var(--clr-dark-blue);
-  margin-top: 100px;
+  margin-top: 137px;
   width: 100%;
 	height: 100px;
   display: flex;
   justify-content: center;
-	align-items: center;
+	align-items: end;
   /* position: absolute; */
 }
 
@@ -126,13 +126,6 @@ main {
   margin: auto;
 }
 
-.page-container div img:first-child {
-  position: relative;
-  top: 40px;
-  /* z-index: 0; */
-  margin: auto;
-}
-
 .page-container-small div img {
   position: relative;
   top: 110px;
@@ -140,12 +133,7 @@ main {
   margin: auto;
 }
 
-.page-container-small div img:first-child {
-  position: relative;
-  top: 10px;
-  z-index: -5;
-  margin: auto;
-}
+
 
 /* Navbar */
 
