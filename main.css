@@ -16,6 +16,7 @@
   --ff-main: "Frezeit-Regular";
 
   --header-height: 3.5rem;
+  --top-peek: 3vh;
 }
 
 /* CSS RESET */
@@ -32,11 +33,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-html,
-body {
-  height: 100%;
 }
 
 body {
@@ -142,13 +138,7 @@ main {
 
 .page-container div img {
   position: relative;
-  top: 110px;
-  /* z-index: 0; */
-}
-
-.page-container-small div img {
-  position: relative;
-  top: 90px;
+  top: 2vh;
 }
 
 /* Navbar */
@@ -158,7 +148,7 @@ main {
 }
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
