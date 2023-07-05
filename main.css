@@ -103,12 +103,10 @@ main {
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 50px;
 }
 
 .page-container {
-  /* margin-top: 50px; */
-  padding: 0 5rem;
+  padding: 0 1rem;
 }
 
 .page-container-small {
@@ -127,10 +125,11 @@ main {
 .page-container,
 .page-container-small {
   gap: 2vh;
+  padding: 0 1vh;
 }
 
 .page-container div {
-  aspect-ratio: 2000 / 1458;
+  aspect-ratio: 2000 / 1458;
 }
 .page-container-small div {
   aspect-ratio: 700 / 1021;
@@ -496,25 +495,6 @@ footer {
 }
 
 /* Media queries */
-
-@media (max-width: 1500px) {
-  .page-container {
-    gap: 2vh;
-    padding: 0 3rem;
-  }
-}
-
-@media (max-width: 1395px) {
-  main {
-    max-width: 95%;
-  }
-
-  .page-container div {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80%;
-  }
-}
 
 @media screen and (min-width: 1001px) {
   .container {
