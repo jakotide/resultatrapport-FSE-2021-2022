@@ -116,7 +116,6 @@ main {
   justify-content: center;
   margin: auto;
   align-items: center;
-  display: flex;
   flex-direction: column;
 }
 
