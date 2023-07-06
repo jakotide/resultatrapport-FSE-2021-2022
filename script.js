@@ -83,7 +83,23 @@ showMenu('nav-toggle', 'nav-menu');
 // Link offset
 
 // Smooth scrolling behavior with an offset of 100 pixels
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//   anchor.addEventListener('click', function (e) {
+//     e.preventDefault();
+
+//     const target = document.querySelector(this.getAttribute('href'));
+//     const offset = 90;
+
+//     if (target) {
+//       window.scrollTo({
+//         top: target.offsetTop - offset,
+//         behavior: 'smooth'
+//       });
+//     }
+//   });
+// });
+
+document.querySelectorAll('.dropdown__menu a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
 
@@ -98,6 +114,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+
 
 // To top button
 const toTopBtn = document.querySelector(".to-top-btn");
